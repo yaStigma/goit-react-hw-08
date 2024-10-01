@@ -1,8 +1,10 @@
+import css from './UserMenu.module.css'
+
 export default function UserMenu() {
     return (
-        <div >
+        <div className={css.box}>
       <p >Welcome, </p>
-      <button type="button" >
+      <button type="button" className={css.button} >
         Logout
       </button>
     </div>

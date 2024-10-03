@@ -2,27 +2,41 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import css from "./RegisterForm.module.css"
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operations';
 
 
 export default function RegisterForm() {
     const FeedbackSchema = Yup.object().shape({
-        username: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Pleace, enter your name"),
+        name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Pleace, enter your name"),
         email: Yup.string().min(3, "Too Short!").max(50, "Too Long!").email('Invalid email')
                 .required('Email required'),
                 password: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Pleace, enter your password"),
     });
     
-    const userNameFieldId = nanoid();
+    const initialValues = {
+        name: "",
+        email: "",
+        password: "",
+      };
+
+    const nameFieldId = nanoid();
     const emailFieldId = nanoid();
     const passwordFieldId = nanoid();
 
+    const dispatch = useDispatch();
+    const handleSubmit = (values, actions) => {
+      console.log(values);
+      dispatch(register(values));
+      actions.resetForm();
+    };
 
     return (
         <>
 
         <Formik
-            initialValues={""} 
-            onSubmit={() => {}}
+            initialValues={initialValues} 
+            onSubmit={handleSubmit}
             validationSchema={FeedbackSchema}
         >
             
@@ -30,9 +44,9 @@ export default function RegisterForm() {
             	<Form className={css.form}>
                 <h2>Register Form</h2>
                 <div className={css.blok}>
-                <label htmlFor={userNameFieldId}> Username:</label>
-                <Field type="text" name="username" id={userNameFieldId} className={css.field}/>
-				<ErrorMessage className={css.error} name="username" component="span" />
+                <label htmlFor={nameFieldId}> Username:</label>
+                <Field type="text" name="name" id={nameFieldId} className={css.field}/>
+				<ErrorMessage className={css.error} name="name" component="span" />
                 </div>
                 <div className={css.blok}>
                 <label htmlFor={emailFieldId}> Email:</label>

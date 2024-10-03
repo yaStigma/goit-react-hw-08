@@ -14,13 +14,21 @@ export default function LoginForm() {
     const emailFieldId = nanoid();
     const passwordFieldId = nanoid();
 
+    const initialValues = {
+        email: "",
+        password: "",
+      };
+      const handleSubmit = (values, actions) => {
+        console.log(values);
+                actions.resetForm();
+      };
 
     return (
         <>
 
         <Formik
-            initialValues={""} 
-            onSubmit={() => {}}
+            initialValues={initialValues} 
+            onSubmit={handleSubmit}
             validationSchema={FeedbackSchema}
         >
             

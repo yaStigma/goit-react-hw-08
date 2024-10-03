@@ -5,8 +5,13 @@ import css from './RegistrationPage.module.css'
 export default function RegistrationPage() {
     return (
        <div className={css.wrapper}>
-        <RegisterForm/>
+        
+        <div className={css.box}>
+            <RegisterForm/>
+        </div>
+        <div className={css.boxItem}>
         <RegisterInfo/>
+        </div>
        </div>
     )
 };

@@ -1,13 +1,20 @@
-import SearchBox from '../../components/SearchBox/SearchBox'
 import ContactList from '../../components/ContactList/ContactList'
+import SearchBox from '../../components/SearchBox/SearchBox'
 import ContactForm from '../../components/ContactForm/ContactForm'
+import css from './ContactsPage.module.css'
+
 
 export default function ContactsPage() {
     return (
-       <div>
+       <div className={css.wrapper}>
+<div className={css.box}>
 <ContactForm/>
-        <SearchBox/>
+
+</div>
+<div className={css.boxItem}>
+<SearchBox/>
 <ContactList/>
-       </div>
+</div>    
+   </div>
     )
 };

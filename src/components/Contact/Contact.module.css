@@ -12,12 +12,17 @@
   margin: 0;
 }
 .button {
-  background-color: #7c8185;
-  color: white;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
   border: none;
-  padding: 5px 20px;
+  padding: 5px;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+.button:hover,
+.button:focus {
+  color: #9c95b8;
 }

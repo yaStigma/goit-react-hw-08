@@ -44,6 +44,7 @@ export default function ContactForm() {
         >
             {() => (
                 <Form className={css.form}>
+                    <h2>New contact</h2>
                     <div className={css.blok}>
                         <label htmlFor={nameFieldId}><BsFillPersonFill /> Name:</label>
                         <Field className={css.field} type="text" name="name" id={nameFieldId} placeholder="Name contact" />

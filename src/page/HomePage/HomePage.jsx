@@ -1,5 +1,11 @@
+import {HomePageInfo} from '../../components/Infoblock/InfoBlock'
+import css from './HomePage.module.css'
+
 export default function HomePage() {
     return(
-        <h1>Home Page</h1>
+        <div className={css.wrapper}>
+        <img className={css.img} src="./address_book.png" alt="address_book" />
+        <HomePageInfo/>
+       </div>
     )
 };

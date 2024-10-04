@@ -29,9 +29,6 @@ extraReducers: (builder) => {
         state.loading = false;
         state.error = action.payload;
       })
-      // .addCase(logOut.fulfilled, () => {
-      //   return (initialState)
-      // })
       .addCase(addContact.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -58,7 +55,10 @@ extraReducers: (builder) => {
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+      .addCase(logOut.fulfilled, () => {
+        return (initialState)
+      })
   },
 });
 

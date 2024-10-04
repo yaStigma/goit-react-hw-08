@@ -10,20 +10,24 @@ import RegistrationPage from '../../page/RegistrationPage/RegistrationPage'
 import Layout from "../Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { refreshUser } from "../../redux/auth/operations";
 
 
 export default function App() {
 const dispatch = useDispatch();
-const isLoggedIn = useSelector(selectIsLoggedIn);
+// const isLoggedIn = useSelector(selectIsLoggedIn);
 
 
-useEffect(()=>{
- if (isLoggedIn) {
-  dispatch(fetchContacts())
- }
+// useEffect(()=>{
+//  if (isLoggedIn) {
+//   dispatch(fetchContacts())
+//  }
     
-}, [dispatch, isLoggedIn])
+// }, [dispatch, isLoggedIn])
 
+useEffect (() => {
+  dispatch(refreshUser())
+}, [dispatch])
 
   return (
     <Layout>

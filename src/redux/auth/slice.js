@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { logIn, logOut, register } from './operations';
+import { logIn, logOut, refreshUser, register } from './operations';
 import { fetchContacts } from '../contacts/operations';
 
 
@@ -13,6 +13,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isLoading: false,
+  isRefreshing: false,
   isError: false,
 };
 
@@ -40,8 +41,14 @@ const authSlice = createSlice({
 .addCase(fetchContacts.fulfilled, (state, action) => {
   state.contacts = action.payload;
 })
-  
-
+.addCase(refreshUser.pending, (state) =>{
+state.isRefreshing = true;
+})
+.addCase(refreshUser.fulfilled, (state, action) =>{
+state.user = action.payload;
+state.isRefreshing = false;
+state.isLoggedIn = true;
+})
 
     .addMatcher(isAnyOf(register.pending, logIn.pending), state => {
       state.isLoading = true;

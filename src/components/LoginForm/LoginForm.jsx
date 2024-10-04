@@ -2,6 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import css from "./LoginForm.module.css"
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/auth/operations';
 
 
 export default function LoginForm() {
@@ -10,7 +12,7 @@ export default function LoginForm() {
                 .required('Email required'),
         password: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Pleace, enter your password"),
     });
-    
+  
     const emailFieldId = nanoid();
     const passwordFieldId = nanoid();
 
@@ -18,9 +20,11 @@ export default function LoginForm() {
         email: "",
         password: "",
       };
+      const dispatch = useDispatch();
       const handleSubmit = (values, actions) => {
         console.log(values);
-                actions.resetForm();
+        dispatch(logIn(values));
+        actions.resetForm();
       };
 
     return (

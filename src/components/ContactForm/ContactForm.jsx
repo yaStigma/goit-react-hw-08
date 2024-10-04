@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 import { BsFillTelephoneFill, BsFillPersonFill } from "react-icons/bs";
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
-import { selectContacts } from '../../redux/contacts/slice'; 
+import { selectContacts } from '../../redux/contacts/selectors'; 
 
 export default function ContactForm() {
     const FeedbackSchema = Yup.object().shape({

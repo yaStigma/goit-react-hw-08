@@ -1,18 +1,22 @@
 import Logo from "../Logo/Logo";
-import SearchBox from '../../components/SearchBox/SearchBox'
 import Navigation from '../Navigation/Navigation'
 import UserMenu from '../UserMenu/UserMenu'
 import AuthNav from '../AuthNav/AuthNav'
 import css from './AppBar.module.css'
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 export default function AppBar() {
+
+const isLoggedIn = useSelector(selectIsLoggedIn)
+
     return (
         <header className={css.wrapper}>
 <Logo/>
-<Navigation/>
-<SearchBox/>
-<UserMenu/>
-<AuthNav/>
+
+{isLoggedIn ? <><Navigation/> <UserMenu/> </>: <AuthNav/>}
+
+
         </header>
     )
 };

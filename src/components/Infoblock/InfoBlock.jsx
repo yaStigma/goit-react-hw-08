@@ -33,7 +33,7 @@ export function LoginInfo() {
     <div className={css.block}>
         <h2>Welcome back to PhoneBook!</h2>
         <p>
-        We’re glad to see you again! Log in to access your digital address book and continue managing your contacts:
+        We&apos;re glad to see you again! Log in to access your digital address book and continue managing your contacts:
         </p>
 <ul>
     <li>Quickly find the contacts you need with our powerful search functionality.
@@ -43,7 +43,7 @@ export function LoginInfo() {
     <li>Access your data securely from any device, knowing that your information is always safe.</li>
 </ul>
 <p>
-Don’t waste time — simply enter your credentials and get back to your digital phone book!
+Don&apos;t waste time — simply enter your credentials and get back to your digital phone book!
 </p>
 <p>
 Log in now and take control of your contact management!
@@ -58,7 +58,7 @@ export function HomePageInfo() {
     <div className={css.block}>
         <h2>Welcome to PhoneBook!</h2>
         <p>
-        <b>PhoneBook</b> is your reliable assistant for managing contacts. No matter how many numbers and entries you have, we provide a simple and convenient way to keep all your data in one place. With us, you’ll never lose a single contact again!
+        <b>PhoneBook</b> is your reliable assistant for managing contacts. No matter how many numbers and entries you have, we provide a simple and convenient way to keep all your data in one place. With us, you&apos;ll never lose a single contact again!
         </p>
         <p><b>Key Features:</b></p>
 <ul>

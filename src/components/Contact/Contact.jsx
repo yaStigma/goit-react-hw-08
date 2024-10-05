@@ -3,7 +3,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
-import { AiTwotoneEdit } from "react-icons/ai";
+// import { AiTwotoneEdit } from "react-icons/ai";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 
 

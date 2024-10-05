@@ -1,4 +1,4 @@
-import css from './Infoblock.module.css'
+import css from './InfoBlock.module.css'
 
 
 

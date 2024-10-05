@@ -1,5 +1,5 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import {RegisterInfo} from '../../components/Infoblock/InfoBlock'
+import {RegisterInfo} from '../../components/InfoBlock/InfoBlock'
 import css from './RegistrationPage.module.css'
 
 export default function RegistrationPage() {

@@ -1,4 +1,4 @@
-import {HomePageInfo} from '../../components/Infoblock/InfoBlock'
+import {HomePageInfo} from '../../components/InfoBlock/InfoBlock'
 import css from './HomePage.module.css'
 
 export default function HomePage() {

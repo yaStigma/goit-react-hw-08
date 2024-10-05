@@ -20,9 +20,9 @@ export default function Contact({name, number, id}) {
       <button className={css.button} onClick={() => dispatch(deleteContact(id))}>
         <AiOutlineCloseSquare/>
       </button>
-      <button className={css.button} >
+      {/* <button className={css.button} >
         <AiTwotoneEdit/>
-      </button>
+      </button> */}
       </div>
     </div>
 

@@ -29,3 +29,7 @@
   align-items: flex-start;
   width: 50%;
 }
+p,
+ul {
+  margin: 0;
+}
